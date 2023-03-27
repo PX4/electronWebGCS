@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+ <Document>
+  <name>QGroundControl Daily Plan KML</name>
+  <open>1</open>
+  <Style id="BalloonStyle">
+   <BalloonStyle>
+    <text>$[description]</text>
+   </BalloonStyle>
+  </Style>
+  <Style id="MissionLineStyle">
+   <LineStyle>
+    <color>ff1c78be</color>
+    <width>4</width>
+   </LineStyle>
+  </Style>
+  <Style id="SurveyPolygonStyle">
+   <PolyStyle>
+    <color>7f008000</color>
+   </PolyStyle>
+   <LineStyle>
+    <color>7f008000</color>
+   </LineStyle>
+  </Style>
+  <Folder>
+   <name>Items</name>
+   <Placemark>
+    <name>0 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 0
+Waypoint
+Alt AMSL: -0.51 m
+Alt Rel: 0.00 m
+Lat: 37.4135428
+Lon: -121.9965495
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9965495,37.4135428,-0.51</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>2 Takeoff</name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 2
+Takeoff
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4135428
+Lon: -121.9965495
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9965495,37.4135428,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>3 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 3
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139285
+Lon: -121.9973425
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9973425,37.4139285,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>5 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 5
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4138385
+Lon: -121.9973425
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9973425,37.4138385,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>7 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 7
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124168
+Lon: -121.9973425
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9973425,37.4124168,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>8 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 8
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4123269
+Lon: -121.9973425
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9973425,37.4123269,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>9 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 9
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4123508
+Lon: -121.9970595
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9970595,37.4123508,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>10 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 10
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124407
+Lon: -121.9970595
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9970595,37.4124407,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>12 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 12
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4138595
+Lon: -121.9970595
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9970595,37.4138595,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>13 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 13
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139494
+Lon: -121.9970595
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9970595,37.4139494,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>14 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 14
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139704
+Lon: -121.9967764
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9967764,37.4139704,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>15 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 15
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4138804
+Lon: -121.9967764
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9967764,37.4138804,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>17 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 17
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124646
+Lon: -121.9967764
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9967764,37.4124646,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>18 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 18
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4123747
+Lon: -121.9967764
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9967764,37.4123747,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>19 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 19
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4123985
+Lon: -121.9964934
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9964934,37.4123985,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>20 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 20
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124885
+Lon: -121.9964934
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9964934,37.4124885,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>22 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 22
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139014
+Lon: -121.9964933
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9964933,37.4139014,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>23 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 23
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139913
+Lon: -121.9964933
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9964933,37.4139913,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>24 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 24
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4140123
+Lon: -121.9962103
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9962103,37.4140123,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>25 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 25
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139224
+Lon: -121.9962103
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9962103,37.4139224,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>27 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 27
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4125123
+Lon: -121.9962103
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9962103,37.4125123,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>28 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 28
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124224
+Lon: -121.9962103
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9962103,37.4124224,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>29 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 29
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124463
+Lon: -121.9959272
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9959272,37.4124463,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>30 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 30
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4125362
+Lon: -121.9959272
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9959272,37.4125362,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>32 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 32
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139433
+Lon: -121.9959272
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9959272,37.4139433,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>33 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 33
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4140333
+Lon: -121.9959272
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9959272,37.4140333,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>34 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 34
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4140542
+Lon: -121.9956441
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9956441,37.4140542,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>35 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 35
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4139643
+Lon: -121.9956441
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9956441,37.4139643,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>37 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 37
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4125601
+Lon: -121.9956442
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9956442,37.4125601,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>38 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 38
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124702
+Lon: -121.9956442
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9956442,37.4124702,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>39 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 39
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4124940
+Lon: -121.9953611
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9953611,37.4124940,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>40 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 40
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4125840
+Lon: -121.9953611
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9953611,37.4125840,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>42 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 42
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4129051
+Lon: -121.9953611
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9953611,37.4129051,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+   <Placemark>
+    <name>43 </name>
+    <styleUrl>#BalloonStyle</styleUrl>
+    <description><![CDATA[Index: 43
+Waypoint
+Alt AMSL: 20.49 m
+Alt Rel: 21.00 m
+Lat: 37.4129951
+Lon: -121.9953611
+]]></description>
+    <Point>
+     <altitudeMode>absolute</altitudeMode>
+     <coordinates>-121.9953611,37.4129951,20.49</coordinates>
+     <extrude>1</extrude>
+    </Point>
+   </Placemark>
+  </Folder>
+  <Placemark>
+   <styleUrl>#MissionLineStyle</styleUrl>
+   <name>Flight Path</name>
+   <visibility>1</visibility>
+   <LookAt>
+    <latitude>37.4135428</latitude>
+    <longitude>-121.9965495</longitude>
+    <altitude>-122.00</altitude>
+    <heading>-100</heading>
+    <tilt>45</tilt>
+    <range>2500</range>
+   </LookAt>
+   <LineString>
+    <extruder>1</extruder>
+    <tessellate>1</tessellate>
+    <altitudeMode>absolute</altitudeMode>
+    <coordinates>-121.9965495,37.4135428,-0.51
+-121.9965495,37.4135428,20.49
+-121.9965495,37.4135428,20.49
+-121.9973425,37.4139285,20.49
+-121.9973425,37.4138385,20.49
+-121.9973425,37.4124168,20.49
+-121.9973425,37.4123269,20.49
+-121.9970595,37.4123508,20.49
+-121.9970595,37.4124407,20.49
+-121.9970595,37.4138595,20.49
+-121.9970595,37.4139494,20.49
+-121.9967764,37.4139704,20.49
+-121.9967764,37.4138804,20.49
+-121.9967764,37.4124646,20.49
+-121.9967764,37.4123747,20.49
+-121.9964934,37.4123985,20.49
+-121.9964934,37.4124885,20.49
+-121.9964933,37.4139014,20.49
+-121.9964933,37.4139913,20.49
+-121.9962103,37.4140123,20.49
+-121.9962103,37.4139224,20.49
+-121.9962103,37.4125123,20.49
+-121.9962103,37.4124224,20.49
+-121.9959272,37.4124463,20.49
+-121.9959272,37.4125362,20.49
+-121.9959272,37.4139433,20.49
+-121.9959272,37.4140333,20.49
+-121.9956441,37.4140542,20.49
+-121.9956441,37.4139643,20.49
+-121.9956442,37.4125601,20.49
+-121.9956442,37.4124702,20.49
+-121.9953611,37.4124940,20.49
+-121.9953611,37.4125840,20.49
+-121.9953611,37.4129051,20.49
+-121.9953611,37.4129951,20.49
+</coordinates>
+   </LineString>
+  </Placemark>
+ </Document>
+</kml>

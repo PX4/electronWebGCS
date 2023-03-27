@@ -1,0 +1,107 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+body {
+  
+  
+  /* height: 100vh; */
+  overflow-y: hidden;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  /* overflow-y: hidden; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+/*button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  appearance: none;
+  font-size: 1.3rem;
+  margin: 10px !important; 
+  transition: all ease-in 0.1s;
+  cursor: pointer;
+  opacity: 0.9;
+}*/
+
+/*button:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}*/
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  height: fit-content;
+  width: fit-content;
+  
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.FlightView {
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.map-container {
+  z-index: -0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+    height: 100vw;
+  }
+
+#buttons {
+  position: absolute;
+  margin: 5px;
+  top: 80px;
+  left: 0;
+  z-index: 1;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+}
+#indicators {
+  position: absolute;
+  margin: 5px;
+  top: 70px;
+  right: 0;
+  z-index: 1;
+}
+
+.instrument{
+  height: 150px !important;
+  width: 150px !important;
+}
+
+#coordinates{
+  background-color: white;
+  opacity: 0.9 ;
+  position: absolute;
+  margin: 10px;
+  bottom: -0px;
+  left: 0;
+  z-index: 1;
+}
+
+/* progress bar change radius */
+.progress{
+  --bs-progress-border-radius: 0px !important;
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  z-index: 1;
+}

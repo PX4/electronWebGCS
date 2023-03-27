@@ -1,0 +1,11 @@
+{
+  "name": "mavsdk-proto",
+  "version": "1.0.0",
+  "description": "[![prototool](https://github.com/mavlink/MAVSDK-Proto/workflows/prototool/badge.svg)](https://github.com/mavlink/MAVSDK-Proto/actions?query=branch%3Amain)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
