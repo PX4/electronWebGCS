@@ -10,7 +10,7 @@
 Clone the repo and install dependencies:
 
 ```bash
-git clone --depth 1 --branch main https://github.com/danielhonies/electronwebgcs.git 
+git clone --depth 1 --branch main https://github.com/PX4/electronwebgcs.git 
 cd electronwebgcs
 npm install
 ```
