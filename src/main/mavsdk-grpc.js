@@ -14,6 +14,16 @@ const ACTION_PACKAGE_DEFINITION = protoLoader.loadSync(
      oneofs: true
     });
 
+const MAVSDK_MANUAL_CONTROL_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/manual_control/manual_control.proto');
+console.log(MAVSDK_MANUAL_CONTROL_PROTO_PATH);
+const MANUAL_CONTROL_PACKAGE_DEFINITION = protoLoader.loadSync(
+    MAVSDK_MANUAL_CONTROL_PROTO_PATH,
+    {keepCase: true,
+        longs: String,
+        enums: String,
+        defaults: true,
+        oneofs: true
+    });
 
 var MAVSDK_TELEMETRY_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/telemetry/telemetry.proto');
 console.log(MAVSDK_TELEMETRY_PROTO_PATH);
@@ -37,6 +47,9 @@ class MAVSDKDrone {
         this.Telemetry = grpc.loadPackageDefinition(TELEMTRY_PACKAGE_DEFINITION).mavsdk.rpc.telemetry;
         this.TelemetryClient = new this.Telemetry.TelemetryService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
 
+        this.ManualControl = grpc.loadPackageDefinition(MANUAL_CONTROL_PACKAGE_DEFINITION).mavsdk.rpc.manual_control;
+        this.ManualControlClient = new this.ManualControl.ManualControlService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
+
         this.position = {} // Initialize to an empty object
         this.attitudeEuler = {} // Initialize to an empty object
         this.heading = {}
@@ -56,6 +69,24 @@ class MAVSDKDrone {
         this.SubscribeToRcStatus()
     }
 
+    StartPositionControl()
+    {
+        this.ManualControlClient.StartPositionControl({}, function(err, StartPositionControlResponse){
+            if(err){
+                console.log("Unable to start position control: ", err);
+                return;
+            }
+        });
+    }
+
+    SetManualControlInput(x, y, z, r){
+        this.ManualControlClient.SetManualControlInput({x: x, y: y, z: z, r: r}, function(err, SetManualControlInputResponse){
+            if(err){
+                console.log("Unable to set manual control: ", err);
+                return;
+            }
+        });
+    }
 
     Arm()
     {
@@ -255,7 +286,7 @@ class MAVSDKDrone {
         this.RcStatusCall = this.TelemetryClient.subscribeRcStatus({});
 
         this.RcStatusCall.on('data', function(rcStatusResponse){
-            console.log(rcStatusResponse);
+            //console.log(rcStatusResponse);
             self.rcStatus = rcStatusResponse.rc_status
             return; 
         });

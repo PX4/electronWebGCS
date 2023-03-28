@@ -100,6 +100,19 @@ app.get('/goto', function(req, res){
     res.sendStatus(200);
 });
 
+app.get('/setManualControl', function(req, res){
+    console.log(req.query)
+    drone.SetManualControlInput(req.query.x, req.query.y, req.query.z, req.query.r);
+    res.sendStatus(200);
+});
+
+app.get('/startPositionControl', function(req, res){
+    console.log(req.query)
+    drone.StartPositionControl();
+    res.sendStatus(200);
+});
+
+
 app.get('/health', function(req, res){
    
     res.send(drone.health)

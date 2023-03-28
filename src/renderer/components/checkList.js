@@ -22,7 +22,7 @@ function CheckList() {
     const timer = setInterval(async () => {
         const res = await fetch(HEALTH_REST_ENDPOINT);
         const newHealth = await res.json();
-        console.log(newHealth);
+        //console.log(newHealth);
         setHealth(newHealth);
        
     }, 100);

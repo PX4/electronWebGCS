@@ -38,7 +38,7 @@ function Indicators(){
 	  	<div id="indicators">
 			<HeadingIndicator heading={heading.heading_deg} showBox={false} />
 
-			<AttitudeIndicator roll={attitude.roll_deg} pitch={attitude.pitch_deg} showBox={false} />
+			<AttitudeIndicator roll={attitude.roll_deg*-1} pitch={attitude.pitch_deg} showBox={false} />
 	  	</div>
   	)
 }

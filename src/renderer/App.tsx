@@ -15,6 +15,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import BatteryBar from './components/batteryBar';
 import RTLButton from './components/rtlButton';
 import CheckList from './components/checkList';
+import Gamepad from './components/gamepad';
 
 function FlightView() {
   return (
@@ -30,6 +31,7 @@ function FlightView() {
           <TakeoffButton/>
           <LandButton/>
           <RTLButton/>
+          <Gamepad/>
         </ButtonGroup>
        
         <Indicators/>
