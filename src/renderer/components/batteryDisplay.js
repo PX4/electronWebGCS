@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 
-const GPSINFO_REST_ENDPOINT = "http://localhost:8081/battery"  
+const BATTERY_REST_ENDPOINT = "http://localhost:8081/battery"  
     
 
 function BatteryDisplay() {
@@ -15,7 +15,7 @@ function BatteryDisplay() {
     useEffect( () => {
         
       const timer = setInterval(async () => {
-          const res = await fetch(GPSINFO_REST_ENDPOINT);
+          const res = await fetch(BATTERY_REST_ENDPOINT );
           const newBattery = await res.json();
           setBattery(newBattery);
          

@@ -93,6 +93,11 @@ app.get('/attitudeEuler', function(req, res){
 app.get('/heading', function(req, res){
     res.send(drone.heading) 
 });
+
+app.get('/flightMode', function(req, res){
+    res.send(drone.flightMode)
+});
+
 app.get('/goto', function(req, res){
 
     console.log(req.query)

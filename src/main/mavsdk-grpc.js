@@ -72,6 +72,7 @@ class MAVSDKDrone {
         this.rcStatus = {}
         this.inAir = {}
         this.armed = {}
+        this.flightMode = {}
         this.SubscribeToBattery()
         this.SubscribeToGps()
         this.SubscribeToAttitudeEuler()
@@ -81,6 +82,7 @@ class MAVSDKDrone {
         this.SubscribeToInAir()
         this.SubscribeToHealth()
         this.SubscribeToRcStatus()
+        this.SubscribeToFlightMode()
     }
 
     StartMission(){
@@ -173,6 +175,31 @@ class MAVSDKDrone {
             }
         });
     }
+
+    SubscribeToFlightMode(){
+        const self = this;
+
+        this.FlightModeCall = this.TelemetryClient.subscribeFlightMode({});
+        this.FlightModeCall.on('data', function(flightModeResponse){
+            self.flightMode = flightModeResponse
+            return;
+        });
+
+        this.FlightModeCall.on('end', function() {
+            console.log("SubscribeFlightMode request ended");
+            return;
+        });
+
+        this.FlightModeCall.on('error', function(e) {
+            console.log(e)
+            return;
+        });
+        this.FlightModeCall.on('status', function(status) {
+            console.log(status);
+            return;
+        });
+    }
+
 
     SubscribeToGps()
     {
