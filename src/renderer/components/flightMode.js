@@ -17,7 +17,7 @@ function FlightMode() {
       const timer = setInterval(async () => {
           const res = await fetch(FLIGHTMODE_REST_ENDPOINT );
           const newFlightMode = await res.json();
-          console.log(newFlightMode);
+          //console.log(newFlightMode);
           setFlightMode(newFlightMode);
          
       }, 100);

@@ -105,3 +105,7 @@ a:hover {
   width: 100%;
   z-index: 1;
 }
+
+.table {
+  --bs-table-bg: #212529 !important;
+}

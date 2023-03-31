@@ -129,6 +129,16 @@ app.get('/health', function(req, res){
 
 });
 
+app.get('/log', function(req, res){
+      
+    drone.DownloadLogFile(req.query.id);
+});
+
+app.get('/logs', function(req, res){
+    console.log('Log List requested!')
+    drone.GetLogEntries();  
+    res.send(drone.logs);
+});
 app.get('/armed', function(req, res){
 
     res.send(drone.armed)

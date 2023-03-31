@@ -36,6 +36,17 @@ const MANUAL_CONTROL_PACKAGE_DEFINITION = protoLoader.loadSync(
         oneofs: true
     });
 
+const MAVSDK_LOG_FILES_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/log_files/log_files.proto');
+console.log(MAVSDK_LOG_FILES_PROTO_PATH);
+const LOG_FILES_PACKAGE_DEFINITION = protoLoader.loadSync(
+    MAVSDK_LOG_FILES_PROTO_PATH,
+    {keepCase: true,
+        longs: String,
+        enums: String,
+        defaults: true,
+        oneofs: true
+    });
+
 var MAVSDK_TELEMETRY_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/telemetry/telemetry.proto');
 console.log(MAVSDK_TELEMETRY_PROTO_PATH);
 const TELEMTRY_PACKAGE_DEFINITION = protoLoader.loadSync(
@@ -64,6 +75,9 @@ class MAVSDKDrone {
         this.Mission = grpc.loadPackageDefinition(MISSION_PACKAGE_DEFINITION).mavsdk.rpc.mission;
         this.MissionClient = new this.Mission.MissionService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
 
+        this.LogFiles = grpc.loadPackageDefinition(LOG_FILES_PACKAGE_DEFINITION).mavsdk.rpc.log_files;
+        this.LogFilesClient = new this.LogFiles.LogFilesService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
+
         this.position = {} // Initialize to an empty object
         this.attitudeEuler = {} // Initialize to an empty object
         this.heading = {}
@@ -73,6 +87,7 @@ class MAVSDKDrone {
         this.inAir = {}
         this.armed = {}
         this.flightMode = {}
+        this.logs = []
         this.SubscribeToBattery()
         this.SubscribeToGps()
         this.SubscribeToAttitudeEuler()
@@ -83,6 +98,33 @@ class MAVSDKDrone {
         this.SubscribeToHealth()
         this.SubscribeToRcStatus()
         this.SubscribeToFlightMode()
+        this.GetLogEntries()
+    }
+
+    
+
+    DownloadLogFile(logEntry){
+        
+        this.LogFilesClient.DownloadLogFile({entry: this.logs[logEntry], path: 'logs/' + this.logs[logEntry].date + '.ulg'}, function(err, DownloadLogFileResponse){
+            if(err){
+                console.log("Unable to download log file: ", err);
+                return;
+            }
+            console.log("Download log file: ", DownloadLogFileResponse);
+        });
+    }
+
+    GetLogEntries(){
+        const self = this;
+        this.LogFilesClient.GetEntries({}, function(err, GetEntriesResponse){
+            if(err){
+                console.log("Unable to get log entries: ", err);
+                return;
+            }
+            
+            self.logs = GetEntriesResponse.entries;
+            console.log("Log entries: ", self.logs);
+        });
     }
 
     StartMission(){
