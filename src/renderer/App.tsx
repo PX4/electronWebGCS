@@ -16,6 +16,7 @@ import BatteryBar from './components/batteryBar';
 import RTLButton from './components/rtlButton';
 import CheckList from './components/checkList';
 import Gamepad from './components/gamepad';
+import MissionButton from './components/missionButton';
 
 function FlightView() {
   return (
@@ -32,6 +33,7 @@ function FlightView() {
           <LandButton/>
           <RTLButton/>
           <Gamepad/>
+          <MissionButton />
         </ButtonGroup>
        
         <Indicators/>

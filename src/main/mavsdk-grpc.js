@@ -14,6 +14,17 @@ const ACTION_PACKAGE_DEFINITION = protoLoader.loadSync(
      oneofs: true
     });
 
+const MAVSDK_MISSION_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/mission/mission.proto');
+console.log(MAVSDK_MISSION_PROTO_PATH);
+const MISSION_PACKAGE_DEFINITION = protoLoader.loadSync(
+    MAVSDK_MISSION_PROTO_PATH,
+    {keepCase: true,
+        longs: String,
+        enums: String,
+        defaults: true,
+        oneofs: true
+    });
+
 const MAVSDK_MANUAL_CONTROL_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/manual_control/manual_control.proto');
 console.log(MAVSDK_MANUAL_CONTROL_PROTO_PATH);
 const MANUAL_CONTROL_PACKAGE_DEFINITION = protoLoader.loadSync(
@@ -50,6 +61,9 @@ class MAVSDKDrone {
         this.ManualControl = grpc.loadPackageDefinition(MANUAL_CONTROL_PACKAGE_DEFINITION).mavsdk.rpc.manual_control;
         this.ManualControlClient = new this.ManualControl.ManualControlService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
 
+        this.Mission = grpc.loadPackageDefinition(MISSION_PACKAGE_DEFINITION).mavsdk.rpc.mission;
+        this.MissionClient = new this.Mission.MissionService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
+
         this.position = {} // Initialize to an empty object
         this.attitudeEuler = {} // Initialize to an empty object
         this.heading = {}
@@ -67,6 +81,15 @@ class MAVSDKDrone {
         this.SubscribeToInAir()
         this.SubscribeToHealth()
         this.SubscribeToRcStatus()
+    }
+
+    StartMission(){
+        this.MissionClient.StartMission({}, function(err, StartMissionResponse){
+            if(err){
+                console.log("Unable to start mission: ", err);
+                return;
+            }
+        });
     }
 
     StartPositionControl()

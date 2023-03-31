@@ -112,6 +112,11 @@ app.get('/startPositionControl', function(req, res){
     res.sendStatus(200);
 });
 
+app.get('/startMission', function(req, res){
+    console.log('Mission Start requested!')
+    drone.StartMission();
+    res.sendStatus(200);
+});
 
 app.get('/health', function(req, res){
    
