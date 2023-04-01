@@ -109,3 +109,13 @@ a:hover {
 .table {
   --bs-table-bg: #212529 !important;
 }
+
+.drone{
+  
+  fill: beige;
+  display: block;
+  height: 48px;
+  width: 48px;
+  border: none;
+  
+}

@@ -22,12 +22,15 @@ const PrettyText = styled.label`
 const GPS_REST_ENDPOINT = "http://localhost:8081/gps"
 const DEFAULT_POSITION_STATE = {"latitude_deg":0,"longitude_deg":0,"absolute_altitude_m":0,"relative_altitude_m":0}
 
+const HEADING_REST_ENDPOINT =  "http://localhost:8081/heading"
+const DEFAULT_HEADING_STATE = {"heading_deg":0}
 
 
 
 function GpsCoords() {
 
     const [gpsPos, setGpsPos] = useState(DEFAULT_POSITION_STATE)
+    const [heading, setHeading] = useState(DEFAULT_HEADING_STATE) 
     
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -60,6 +63,9 @@ function GpsCoords() {
             const res = await fetch(GPS_REST_ENDPOINT);
             const newGpsPos = await res.json();
             setGpsPos(newGpsPos);
+            const res2 = await fetch(HEADING_REST_ENDPOINT);
+            const heading = await res2.json();
+            setHeading(heading);
         }, 100);
 
         return () => clearInterval(timer);
@@ -76,7 +82,7 @@ function GpsCoords() {
         
         mark.current = new mapboxgl.Marker().setLngLat([gpsPos.longitude_deg, gpsPos.latitude_deg]).addTo(map.current);
         // set marker icon to font awesome icon
-        
+        mark.current.getElement().innerHTML = '<div class="drone"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8H224V432c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"/></svg></div>';
         
        
 
@@ -110,6 +116,7 @@ function GpsCoords() {
     useEffect(() => {
         if (!map.current) return; // wait for map to initialize
         mark.current.setLngLat([gpsPos.longitude_deg, gpsPos.latitude_deg]);
+        mark.current.setRotation(heading.heading_deg - 45) 
         // kml to geojson
 
         
