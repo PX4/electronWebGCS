@@ -136,6 +136,16 @@ class MAVSDKDrone {
         });
     }
 
+    PauseMission(){
+        this.MissionClient.PauseMission({}, function(err, PauseMissionResponse){
+            if(err){
+                console.log("Unable to pause mission: ", err);
+                return;
+            }
+        });
+    }
+    
+
     StartPositionControl()
     {
         this.ManualControlClient.StartPositionControl({}, function(err, StartPositionControlResponse){

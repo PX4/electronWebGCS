@@ -123,6 +123,12 @@ app.get('/startMission', function(req, res){
     res.sendStatus(200);
 });
 
+app.get('/pauseMission', function(req, res){
+    console.log('Mission Pause requested!')
+    drone.PauseMission();
+    res.sendStatus(200);
+});
+
 app.get('/health', function(req, res){
    
     res.send(drone.health)

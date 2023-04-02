@@ -34,6 +34,7 @@ function FlightView() {
           <RTLButton/>
           <Gamepad/>
           <MissionButton />
+
         </ButtonGroup>
        
         <Indicators/>
