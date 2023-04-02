@@ -111,6 +111,7 @@ a:hover {
 }
 
 .drone{
+  top: -24px;
   stroke: white;
   stroke-width: 20;
   fill: #212529;
