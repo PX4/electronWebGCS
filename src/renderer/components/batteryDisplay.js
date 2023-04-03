@@ -16,9 +16,10 @@ function BatteryDisplay() {
         
       const timer = setInterval(async () => {
           const res = await fetch(BATTERY_REST_ENDPOINT );
-          const newBattery = await res.json();
+          var newBattery = await res.json();
+          newBattery.remaining_percent = newBattery.remaining_percent * 100;
           setBattery(newBattery);
-         
+          
       }, 100);
 
       return () => clearInterval(timer);

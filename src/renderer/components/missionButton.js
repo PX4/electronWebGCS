@@ -50,7 +50,7 @@ function MissionButton() {
     const timer = setInterval(async () => {
         const res = await fetch(FLIGHTMODE_REST_ENDPOINT);
         const newMissionRunning = await res.json();
-        //console.log(newMissionRunning);
+        // console.log(newMissionRunning);
         setMissionRunning(newMissionRunning.flight_mode == 'FLIGHT_MODE_MISSION' ? true : false);
        
     }, 100);
