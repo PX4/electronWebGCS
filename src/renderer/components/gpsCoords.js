@@ -92,6 +92,38 @@ function GpsCoords() {
                 }
                 
             });
+            console.log(missionMarkers);
+            // array of marker coordinates with id 16
+            const markerCoords = missionItems.filter(item => item.command == 16).map(item => [item.y * 1/10000000, item.x * 1/10000000]);
+            
+            map.current.addSource('route', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': markerCoords
+                    }
+                }
+            });
+            console.log(markerCoords);
+            map.current.addLayer({
+                'id': 'route',
+                'type': 'line',
+                'source': 'route',
+                'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                'paint': {
+                'line-color': 'orangered',
+                'line-width': 6,
+                'line-opacity': 0.75
+                }
+                });
+
+
         }
     },[missionItems]);
 
