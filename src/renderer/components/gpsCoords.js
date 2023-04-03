@@ -94,7 +94,7 @@ function GpsCoords() {
             });
             console.log(missionMarkers);
             // array of marker coordinates with id 16
-            const markerCoords = missionItems.filter(item => item.command == 16).map(item => [item.y * 1/10000000, item.x * 1/10000000]);
+            const markerCoords = missionItems.filter(item => item.command == 16 || item.command == 22).map(item => [item.y * 1/10000000, item.x * 1/10000000]);
             
             map.current.addSource('route', {
                 'type': 'geojson',
