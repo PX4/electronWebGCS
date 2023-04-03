@@ -25,12 +25,15 @@ const DEFAULT_POSITION_STATE = {"latitude_deg":0,"longitude_deg":0,"absolute_alt
 const HEADING_REST_ENDPOINT =  "http://localhost:8081/heading"
 const DEFAULT_HEADING_STATE = {"heading_deg":0}
 
-
+const MISSION_REST_ENDPOINT =  "http://localhost:8081/missionItems"
+const DEFAULT_MISSION_STATE = []
 
 function GpsCoords() {
 
     const [gpsPos, setGpsPos] = useState(DEFAULT_POSITION_STATE)
     const [heading, setHeading] = useState(DEFAULT_HEADING_STATE) 
+    const [missionItems, setMissionItems] = useState(DEFAULT_MISSION_STATE)
+    const [missionMarkers, setMissionMarkers] = useState([])
     
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -56,8 +59,44 @@ function GpsCoords() {
         setShowGoto(false);
     }
     const handleShow = (e) =>{ setGoToPos(e), setShowGoto(true);};
+    useEffect(() => {
+        const timeOut = setTimeout(async () => {
+            
+            const res = await fetch(MISSION_REST_ENDPOINT);
+            const newMissionItems = await res.json();
+            setMissionItems(newMissionItems);
+            console.log(newMissionItems);
+            
+        }, 3000);
+    }, []);
+
+    useEffect(() => {
+            if (map.current) {
+            missionMarkers.map((marker) => {
+                marker.remove();
+            });
+            setMissionMarkers([]);
+            //console.log(item.x * 1/10000000, item.y * 1/10000000)
+            missionItems.map((item) => {
+                
+                if(item.command == 16){
+                    const marker = new mapboxgl.Marker({anchor: 'center', offset: [0,0]}).setLngLat([item.y * 1/10000000, item.x * 1/10000000]).addTo(map.current) ;
+                    marker.getElement().innerHTML = '<div class="missionMarker">'+ item.seq + '</div>';
+                    setMissionMarkers(missionMarkers => [...missionMarkers, marker]);
+                }
+
+                if(item.command == 22){
+                    const marker = new mapboxgl.Marker({anchor: 'center', offset: [0,0]}).setLngLat([item.y * 1/10000000, item.x * 1/10000000]).addTo(map.current) ;
+                    marker.getElement().innerHTML = '<div class="missionMarker">T</div>';
+                    setMissionMarkers(missionMarkers => [...missionMarkers, marker]);
+                }
+                
+            });
+        }
+    },[missionItems]);
 
     useEffect( () => {
+
         
         const timer = setInterval(async () => {
             const res = await fetch(GPS_REST_ENDPOINT);

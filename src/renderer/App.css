@@ -121,3 +121,13 @@ a:hover {
   border: none;
   
 }
+
+.missionMarker{
+  background-color: orangered;
+  color: white;
+  padding: 1px 3px;
+  
+  font-size: x-small;
+  font-weight: bold;
+  border-radius: 50%;
+}

@@ -163,6 +163,11 @@ app.get('/rcStatus', function(req, res){
 
 });
 
+app.get('/missionItems', function(req, res){
+    console.log('Mission Items requested!')
+    res.send(drone.missionItems)
+
+});
 server.listen(8081, function () {
     var host = server.address().address
     var port = server.address().port

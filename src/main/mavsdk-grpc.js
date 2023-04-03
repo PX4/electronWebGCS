@@ -24,6 +24,16 @@ const MISSION_PACKAGE_DEFINITION = protoLoader.loadSync(
         defaults: true,
         oneofs: true
     });
+const MAVSDK_MISSION_RAW_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/mission_raw/mission_raw.proto');
+console.log(MAVSDK_MISSION_RAW_PROTO_PATH);
+const MISSION_RAW_PACKAGE_DEFINITION = protoLoader.loadSync(
+    MAVSDK_MISSION_RAW_PROTO_PATH,
+    {keepCase: true,
+        longs: String,
+        enums: String,
+        defaults: true,
+        oneofs: true
+    });
 
 const MAVSDK_MANUAL_CONTROL_PROTO_PATH = path.join(path.dirname(require.resolve('mavsdk-proto')), '/protos/manual_control/manual_control.proto');
 console.log(MAVSDK_MANUAL_CONTROL_PROTO_PATH);
@@ -75,6 +85,9 @@ class MAVSDKDrone {
         this.Mission = grpc.loadPackageDefinition(MISSION_PACKAGE_DEFINITION).mavsdk.rpc.mission;
         this.MissionClient = new this.Mission.MissionService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
 
+        this.MissionRaw = grpc.loadPackageDefinition(MISSION_RAW_PACKAGE_DEFINITION).mavsdk.rpc.mission_raw;
+        this.MissionRawClient = new this.MissionRaw.MissionRawService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
+
         this.LogFiles = grpc.loadPackageDefinition(LOG_FILES_PACKAGE_DEFINITION).mavsdk.rpc.log_files;
         this.LogFilesClient = new this.LogFiles.LogFilesService(GRPC_HOST_NAME, grpc.credentials.createInsecure());
 
@@ -88,6 +101,7 @@ class MAVSDKDrone {
         this.armed = {}
         this.flightMode = {}
         this.logs = []
+        this.missionItems = []
         this.SubscribeToBattery()
         this.SubscribeToGps()
         this.SubscribeToAttitudeEuler()
@@ -99,9 +113,20 @@ class MAVSDKDrone {
         this.SubscribeToRcStatus()
         this.SubscribeToFlightMode()
         this.GetLogEntries()
+        this.DownloadMission() 
     }
 
-    
+    DownloadMission(){
+        const self = this;
+        this.MissionRawClient.DownloadMission({}, function(err, DownloadMissionResponse){
+            if(err){
+                console.log("Unable to download mission: ", err);
+                return;
+            }
+            self.missionItems = DownloadMissionResponse.mission_items;
+            console.log("Download mission: ", DownloadMissionResponse.mission_items);
+        });
+    }
 
     DownloadLogFile(logEntry){
         
