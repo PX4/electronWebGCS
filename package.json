@@ -120,7 +120,7 @@
     "react-drone-hud": "^0.0.1-rc0",
     "react-gamepads": "^1.0.0",
     "react-router-dom": "^6.8.1",
-    "react-typescript-flight-indicators": "^1.0.3",
+    "react-typescript-flight-indicators": "^1.0.4",
     "styled-components": "^5.3.9"
   },
   "devDependencies": {
